@@ -2,41 +2,25 @@
 {% block title %} {{ _('Blog') }} {% endblock %}
 {% block content %}
 
-
-<a class="header5" href="https://medium.com/@vcoeur" target="_blank">
-    <i class="bi bi-box-arrow-up-right"></i>
-    {{ _("Blog (on Medium)") }}
-</a>
-
-
 <div class="row">
-  <div class="col-sm-6">
-    <div class="card m-2">
-      <div class="card-body">
-        <h5 class="card-title">We cannot define what a “Good User Story” is… And it does not matter</h5>
-        <p class="card-text">What really matters about user stories</p>
-        <a href="1" class="btn btn-primary">{{ _("Read the article") }}</a>
-      </div>
+    {% for article in articles %}
+    <div class="col-sm-6">
+        <div class="card m-2">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">{{ article.description }}</p>
+                <a href="{{ article.slug }}" class="btn btn-primary">{{ _("Read the article") }}</a>
+            </div>
+        </div>
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card m-2">
-      <div class="card-body">
-        <h5 class="card-title">Low-cost Django deployment with Google App Engine and Cloud SQL</h5>
-        <p class="card-text">I was looking for a low-cost solution to deploy a basic Django app on Google Cloud</p>
-        <a href="2" class="btn btn-primary">{{ _("Read the article") }}</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card m-2">
-      <div class="card-body">
-        <h5 class="card-title">Agile? Yes of course! Wait… What is it?</h5>
-        <p class="card-text">We all want to be Agile, but do we really know what it means?</p>
-        <a href="2" class="btn btn-primary">{{ _("Read the article") }}</a>
-      </div>
-    </div>
-  </div>
+    {% endfor %}
+</div>
+
+<div class="mt-4">
+    <a class="header5" href="https://medium.com/@vcoeur" target="_blank">
+        <i class="bi bi-box-arrow-up-right"></i>
+        {{ _("View on Medium") }}
+    </a>
 </div>
 
 
