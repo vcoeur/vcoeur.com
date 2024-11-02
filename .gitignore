@@ -1,0 +1,42 @@
+# env settings
+/.env
+/.service-account.json
+/app.yaml
+
+# requirements export
+/requirements.txt
+/cloud-sql-proxy
+/cloud-sql-proxy.sh
+
+# Static files
+/static/
+
+# PyCharm annoying files
+/.idea/
+
+# mypy
+.mypy_cache/
+
+# pytest
+.pytest_cache/
+
+# byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+*.egg-info/
+
+# database files
+/db.sqlite3
+
+# Compiled transalation files
+/locale/**/*.mo
+
+# Compiled static files
+/static-files/
+
+# Cloud SQL Proxy
+start_cloud_sql_proxy.sh
+
+# Node
+/node_modules
