@@ -1,6 +1,13 @@
-{% extends "base.html" %}
+{% extends "_base.html" %}
 {% block title %} {{ _('Blog') }} {% endblock %}
 {% block content %}
+
+<div class="my-4">
+    <a class="header5" href="https://medium.com/@vcoeur" target="_blank">
+        <i class="bi bi-box-arrow-up-right"></i>
+        {{ _("View on Medium") }}
+    </a>
+</div>
 
 <div class="row">
     {% for article in articles %}
@@ -14,13 +21,6 @@
         </div>
     </div>
     {% endfor %}
-</div>
-
-<div class="mt-4">
-    <a class="header5" href="https://medium.com/@vcoeur" target="_blank">
-        <i class="bi bi-box-arrow-up-right"></i>
-        {{ _("View on Medium") }}
-    </a>
 </div>
 
 

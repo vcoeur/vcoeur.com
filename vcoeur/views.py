@@ -30,7 +30,7 @@ def blog(request: HttpRequest) -> HttpResponse:
     )
 
 def article(request: HttpRequest, slug: str) -> HttpResponse:
-    template_name = f"blog/{slug}.html"
+    template_name = f"blog/articles/{slug}.html"
     try:
         return render(
             request,

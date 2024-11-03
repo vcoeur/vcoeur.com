@@ -25,5 +25,5 @@ agile_of_course = dict(
 articles: list[dict] = [
     agile_of_course,
     good_user_story,
-    low_cost_django_google,
+    # low_cost_django_google,
 ]

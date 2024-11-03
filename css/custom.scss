@@ -1,0 +1,105 @@
+// Variable overrides first
+$primary: #883788;
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+body {
+    font-family: "Nunito", sans-serif;
+    background-color: #d5e8ef;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Blog Articles
+.blog-article-container {
+    @extend .row, .justify-content-lg-center;
+}
+.blog-article {
+    @extend .col, .col-lg-8;
+}
+.blog-article figure img {
+    width: 100%;
+}
+.blog-article figure blockquote {
+    @extend .blockquote
+}
+.blog-article figure figcaption {
+    @extend .blockquote-footer
+}
+
+// h1 {
+//     font-variant: small-caps;
+//     font-size: 3rem;
+//     margin-top: 1rem;
+//     margin-bottom: 1rem;
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     padding-top: 0.5rem;
+//     padding-bottom: 0.5rem;
+//     text-align: center;
+//     /*border-top: 2px solid #883788;*/
+//     background-color: #883788;
+//     color: #ffffff;
+// }
+
+// h2 {
+//     font-variant: small-caps;
+//     font-size: 1.5rem;
+//     margin-top: 1rem;
+//     margin-bottom: 1rem;
+//     padding-left: 1rem;
+//     padding-right: 1rem;
+//     padding-top: 0.5rem;
+//     padding-bottom: 0.5rem;
+//     background-color: #d6b8dc;
+//     color: #000000;
+// }
+
+.header1 {
+    font-variant: small-caps;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: #883788;
+    color: #ffffff;
+}
+
+.header2 {
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #d6b8dc;
+    color: #000000;
+}
+
+.header3 {
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #883788;
+    color: #ffffff;
+}
+
+.header4 {
+    font-variant: small-caps;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: #883788;
+    color: #ffffff;
+}
+
+.header5 {
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* background-color: #d6b8dc; */
+    color: #000000;
+}
