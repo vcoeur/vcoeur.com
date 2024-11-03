@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-28 20:48+0200\n"
-"PO-Revision-Date: 2024-09-28 20:48+0200\n"
+"POT-Creation-Date: 2024-11-03 21:22+0100\n"
+"PO-Revision-Date: 2024-11-03 21:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -19,33 +19,32 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: vcoeur/jinja2/base.html:49 vcoeur/jinja2/base.html:51
+#: vcoeur/jinja2/_base.html:49 vcoeur/jinja2/_base.html:51
 #: vcoeur/jinja2/index.html:2
 msgid "Welcome"
 msgstr "Bienvenue"
 
-#: vcoeur/jinja2/base.html:56 vcoeur/jinja2/base.html:58
+#: vcoeur/jinja2/_base.html:56 vcoeur/jinja2/_base.html:58
 #: vcoeur/jinja2/blog.html:2
 msgid "Blog"
 msgstr "Blog"
 
-#: vcoeur/jinja2/base.html:63 vcoeur/jinja2/base.html:65
+#: vcoeur/jinja2/_base.html:63 vcoeur/jinja2/_base.html:65
 #: vcoeur/jinja2/contact.html:2
 msgid "Contact"
 msgstr "Contact"
 
 #: vcoeur/jinja2/blog.html:8
-msgid "Blog (on Medium)"
-msgstr "Blog (sur Medium)"
+msgid "View on Medium"
+msgstr "Voir sur Medium (en anglais)"
 
-#: vcoeur/jinja2/blog.html:18 vcoeur/jinja2/blog.html:27
-#: vcoeur/jinja2/blog.html:36
+#: vcoeur/jinja2/blog.html:19
 msgid "Read the article"
 msgstr "Lire l'article"
 
-#: vcoeur/jinja2/contact.html:8
-msgid "Contact (with Calendly)"
-msgstr "RDV (avec Calendly)"
+#: vcoeur/jinja2/contact.html:6
+msgid "Prenons RDV pour échanger"
+msgstr "Book a meeting"
 
 #: vcoeur/jinja2/index.html:15
 msgid "IT project management"
@@ -70,6 +69,9 @@ msgstr "Français"
 #: vcoeur/settings.py:119
 msgid "English"
 msgstr "Anglais"
+
+#~ msgid "Contact (with Calendly)"
+#~ msgstr "RDV (avec Calendly)"
 
 #~ msgid "My CV"
 #~ msgstr "Mon CV"
