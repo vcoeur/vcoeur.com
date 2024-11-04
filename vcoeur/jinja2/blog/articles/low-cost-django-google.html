@@ -2,6 +2,160 @@
 {% block title %} Low-cost Django deployment with Google App Engine and Cloud SQL {% endblock %}
 {% block article %}
 
-Article content
+<h1> Low-cost Django deployment with Google App Engine and Cloud SQL </h1>
+
+<p>
+    <strong>I was looking for a low-cost solution to deploy a basic Django app on Google.</strong>
+</p>
+<p>
+    The app does not have a lot of traffic, and while I would like to be able to scale, if necessary, my first objective
+    is to find a solution as cheap as possible when the app is not used.
+</p>
+<p>
+    My first idea was to use <a href="https://cloud.google.com/run">Google Cloud Run</a>, which is great to deploy a
+    docker image very easily. Deploying automatically using
+    <a href="https://cloud.google.com/build/docs/deploying-builds/deploy-cloud-run">Google Cloud Build</a> was easy
+    to set up, and the billing model, where we pay only for the time we
+    use the app is interesting. And with the free tier I expected to have no cost at all, which was the case. However,
+    there is a cold start delay anytime we use the app, and if you want your deployment to be always up with at least
+    one replica the cost is high (more than 50 € / month).
+</p>
+<p>
+    I then switched to <a href="https://cloud.google.com/appengine">Google App Engine</a> where the free tier is enough
+    to have zero cost for a low traffic, low resources app. I dislike not being able to build my own docker image, but
+    most web frameworks are well-supported.
+</p>
+<p>
+    In both cases, having a database instance adds some cost.
+</p>
+<p>
+    Keep in mind that this “tutorial” was initially created as a simple note for my own use and might not apply to your
+    use case. Moreover, pricing can change and depends on the region, so your experience might differ from mine.
+</p>
+
+<h2> 1 - Setup a Google Cloud Project </h2>
+
+<h3> A. Create a Google Cloud Project </h3>
+
+<p>
+    The first step is to create a Google Cloud Project if you don’t already have one, and take note of the Project ID:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/projectcreate">console.cloud.google.com/projectcreate</a>
+    </li>
+</ul>
+
+<h3> B. Create a Service Account </h3>
+
+<p>
+    It is a good practice to create specific service accounts for all tasks, instead of relying on default shared
+    service accounts. It allows us to define permissions with more granularity.
+</p>
+<p>
+    You can create a service account:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/iam-admin/serviceaccounts/create">
+            console.cloud.google.com/iam-admin/serviceaccounts/create
+        </a>
+    </li>
+</ul>
+<p>
+    The service account will be added on the IAM dashboard:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/iam-admin/iam">
+            console.cloud.google.com/iam-admin/iam
+        </a>
+    </li>
+</ul>
+<p>
+    You can find the service account with the principal
+    <code>[service-account-id]@[project-id].iam.gserviceaccount.com</code>. You
+    can define permissions atomically, but I might be easier to add common roles including those permissions. Relevant
+    roles are:
+</p>
+<ul>
+    <li> Cloud Datastore User (because App Engine will store data in buckets)</li>
+    <li> Cloud SQL Client (to access a SQL database)</li>
+</ul>
+
+<h3> C. Create a SQL instance </h3>
+
+<p>
+    The cheapest database instance I have found on Google Cloud is PostgreSQL. Please note that pricing depends on a lot
+    of factors, including available instance size, or regions. The example I use might not be available for you.
+</p>
+<p>
+    You can choose PostgreSQL here:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/sql/choose-instance-engine">
+            console.cloud.google.com/sql/choose-instance-engine
+        </a>
+    </li>
+</ul>
+<figure>
+    <img src="{{ static('blog/articles/low-cost-django-google/SQL Configuration.png') }}">
+</figure>
+
+<h3> D. Add database and user </h3>
+
+<p>
+    You can select the new SQL instance:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/sql/instances">
+            console.cloud.google.com/sql/instances
+        </a>
+    </li>
+</ul>
+<p>
+    You will be able to add a Database (take note of the name) and a user (take note of the username and password)
+</p>
+
+<h3> E. Activate App Engine </h3>
+
+<p>
+    You might need to activate App Engine from Google Cloud console:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/appengine">
+            console.cloud.google.com/appengine
+        </a>
+    </li>
+</ul>
+
+<h3> F. Install GCloud CLI </h3>
+
+<p>
+    You will need the gcloud CLI command, install instructions are here:
+</p>
+<ul>
+    <li>
+        <a href="https://cloud.google.com/sdk/docs/install">
+            cloud.google.com/sdk/docs/install
+        </a>
+    </li>
+</ul>
+<p>
+    Useful commands:
+</p>
+<pre>
+$ gcloud auth login
+$ gcloud components install google-cloud-cli-app-engine-python
+$ gcloud config set project [project-id]
+</pre>
+
+<h2> 2 - Create, configure, and deploy a Django app </h2>
+
+<h3> A. Basic Django app </h3>
+
 
 {% endblock %}
