@@ -5,7 +5,6 @@ from django.utils.translation import to_locale, get_language
 from django.utils import translation
 from django.conf import settings
 
-from vcoeur.articles import articles
 from vcoeur.jinja2 import logger
 
 
@@ -25,9 +24,26 @@ def blog(request: HttpRequest) -> HttpResponse:
         "blog.html",
         context=dict(
             active="blog",
-            articles=articles,
+            articles=[
+                dict(
+                    slug='agile-of-course',
+                    title='Agile? Yes of course! Wait… What is it?',
+                    description='We all want to be Agile, but do we really know what it means?',
+                ),
+                dict(
+                    slug='good-user-story',
+                    title='We cannot define what a “Good User Story” is… And it does not matter',
+                    description='What really matters about user stories',
+                ),
+                dict(
+                    slug='low-cost-django-google',
+                    title='Low-cost Django deployment with Google App Engine and Cloud SQL',
+                    description='I was looking for a low-cost solution to deploy a basic Django app on Google Cloud',
+                ),
+            ],
         ),
     )
+
 
 def article(request: HttpRequest, slug: str) -> HttpResponse:
     template_name = f"blog/articles/{slug}.html"
