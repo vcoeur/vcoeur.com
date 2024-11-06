@@ -157,5 +157,171 @@ $ gcloud config set project [project-id]
 
 <h3> A. Basic Django app </h3>
 
+<p>
+    This tutorial does not cover how to create a Django app, you can refer to
+    <a href="https://docs.djangoproject.com/en/5.0/intro/tutorial01/">“Writing your first Django
+        app”</a> official tutorial if necessary.
+</p>
+<p>
+    We will assume a <em>settings.py</em> file where variables are read from the environment
+    (e.g. using the <em>environs</em> package).
+</p>
+
+<h3> B. Note on static and media files </h3>
+
+<p>
+    Static files (like pictures, css, …) and media files (like user uploads, …) can be managed with various backends.
+    This tutorial does not cover how to implement static and media files management, but I have found practical to use:
+</p>
+<ul>
+    <li>
+        The <a href="https://django-storages.readthedocs.io/en/latest/backends/gcloud.html">django-storage</a> package
+        to use a Google Cloud Storage bucket to store media files.
+    </li>
+    <li>
+        And the <a href="https://pypi.org/project/whitenoise/">whitenoise</a> package to serve static files.
+    </li>
+</ul>
+
+<h3> C. Database configuration </h3>
+
+<p>
+    We will assume a <em>settings.py</em> configuration file containing:
+</p>
+<pre>
+DATABASES = {
+    'default': {
+        'ENGINE': env.str('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': env.str('DATABASE_NAME', str(BASE_DIR / 'db.sqlite3')),
+        'USER': env.str('DATABASE_USER', ''),
+        'PASSWORD': env.str('DATABASE_PASSWORD', ''),
+        'HOST': env.str('DATABASE_HOST', ''),
+        'PORT': env.str('DATABASE_PORT', ''),
+        'CONN_MAX_AGE': env.int('DATABASE_CONN_MAX_AGE', 0),
+    }
+}
+</pre>
+<p>
+    First, to run locally, with an SQLite database, there is nothing to do, default values are fine.
+</p>
+<p>
+    To use the production database, you must set the following variables:
+</p>
+<ul>
+    <li>
+        DATABASE_ENGINE: django.db.backends.postgresql
+    </li>
+    <li>
+        DATABASE_HOST: /cloudsql/[project_id]:[instance_region]:[instance_name]
+    </li>
+    <li>
+        DATABASE_PORT: 5432
+    </li>
+    <li>
+        DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD: See 1 - D. Add database and user
+    </li>
+</ul>
+<p>
+    The database host value can also be found in you SQL instances table in the column “Instance connection name”:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/sql/instances">console.cloud.google.com/sql/instances</a>
+    </li>
+</ul>
+
+<h3> D. Remote database while running locally </h3>
+
+<p>
+    It is possible to use the remote database while running the app locally, this can be very practical to run the
+    migrations. You will need to download the <em>cloud-sql-proxy</em> tool from Google:
+</p>
+<ul>
+    <li>
+        <a href="https://cloud.google.com/python/django/run#connect_sql_locally">
+            cloud.google.com/python/django/run#connect_sql_locally
+        </a>
+    </li>
+</ul>
+<p>
+    You might need to authenticate and/or set the current project:
+</p>
+<pre>
+$ gcloud auth login
+$ gcloud config set project [project-id]
+</pre>
+<p>
+    And then you only have to change the DATABASE_HOST configuration variable to <em>127.0.0.1</em> while
+    <em>cloud-sql-proxy</em> is running.
+</p>
+
+<h3> E. The app.yaml deployment configuration </h3>
+
+<p>
+    The app.yaml file define the deployment, including the class of the runner, and the configuration of the app.
+</p>
+
+<pre>
+runtime: python312 # Python 3.12
+
+instance_class: F1 # F1 is smaller class, 384 MG / 600 MHz
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1
+
+entrypoint: gunicorn your-app.wsgi -b 0.0.0.0:8080 --preload --worker-class gthread --workers 2 --threads 2
+
+env_variables:
+  SECRET_KEY: # ...
+  ALLOWED_HOSTS: '[project-id].oa.r.appspot.com'
+  CSRF_TRUSTED_ORIGINS: 'https://[project-id].oa.r.appspot.com'
+
+  DATABASE_ENGINE: django.db.backends.postgresql
+  DATABASE_HOST: /cloudsql/[project_id]:[instance_region]:[instance_name]
+  DATABASE_PORT: 5432
+  DATABASE_NAME: # ...
+  DATABASE_USER: # ...
+  DATABASE_PASSWORD: # ...
+
+# To serve static files (adapt to your settings.py)
+handlers:
+- url: /static
+  static_dir: static/
+- url: /.*
+  script: auto
+</pre>
+<p>
+    You are now ready to deploy the app:
+</p>
+<pre>
+$ gcloud app deploy
+</pre>
+
+<h3> F. Additional notes </h3>
+
+<p>
+    It is possible to deploy multiple <em>services</em> in App Engine, you just need to add a service entry in the
+    <em>app.yaml</em> file.
+</p>
+<p>
+    It is also possible to use custom domain names:
+</p>
+<ul>
+    <li>
+        <a href="https://console.cloud.google.com/appengine/settings/domain">
+            console.cloud.google.com/appengine/settings/domain
+        </a>
+    </li>
+</ul>
+<p>
+    You can then control the dispatching using a <em>dispatch.yaml</em> file:
+</p>
+<ul>
+    <li>
+        <a href="https://cloud.google.com/appengine/docs/standard/reference/dispatch-yaml?tab=python">
+            cloud.google.com/appengine/docs/standard/reference/dispatch-yaml?tab=python
+        </a>
+    </li>
+</ul>
 
 {% endblock %}
