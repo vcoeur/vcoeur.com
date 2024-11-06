@@ -3,7 +3,17 @@
 
 <head>
 
-  <link rel="shortcut icon" type="image/png" href="{{ static('favicon.png') }}" />
+<!--  <link rel="shortcut icon" type="image/png" href="{{ static('favicon-dark.png') }}" />-->
+  <link
+    href="{{ static('favicon-light.png') }}"
+    rel="shortcut icon" type="image/png"
+    media="(prefers-color-scheme: light)"
+  />
+  <link
+    href="{{ static('favicon-dark.png') }}"
+    rel="shortcut icon" type="image/png"
+    media="(prefers-color-scheme: dark)"
+  />
 
   <meta charset="utf-8">
 
@@ -30,7 +40,7 @@
     <div class="mb-3">
       <div class="d-flex justify-content-between mt-2">
         <a href="/">
-          <img alt="v·coeur" src="{{ static('logo.png') }}" width="250px">
+          <img alt="v·coeur" src="{{ static('logo.png') }}" width="230px">
         </a>
         {% if request.LANGUAGE_CODE != 'fr' %}
         <a class="btn btn-secondary lang" href="{{ url('to_french', path_from=request.path) }}"> Français
