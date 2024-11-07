@@ -33,10 +33,15 @@ li pre, p pre {
     width: 100%;
 }
 .blog-article figure blockquote {
-    @extend .blockquote
+    @extend .blockquote;
+    font-size: 1rem;
+    padding-left: 1rem;
+    margin-left: 1rem;
+    border-left: 2px solid #883788;
 }
 .blog-article figure figcaption {
-    @extend .blockquote-footer
+    @extend .blockquote-footer;
+    margin-left: 1rem;
 }
 
 // h1 {
