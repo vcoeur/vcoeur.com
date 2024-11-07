@@ -44,33 +44,29 @@ li pre, p pre {
     margin-left: 1rem;
 }
 
-// h1 {
-//     font-variant: small-caps;
-//     font-size: 3rem;
-//     margin-top: 1rem;
-//     margin-bottom: 1rem;
-//     padding-left: 1rem;
-//     padding-right: 1rem;
-//     padding-top: 0.5rem;
-//     padding-bottom: 0.5rem;
-//     text-align: center;
-//     /*border-top: 2px solid #883788;*/
-//     background-color: #883788;
-//     color: #ffffff;
-// }
+h1 {
+    @extend .py-1, .my-3;
+    font-variant: small-caps;
+    font-size: 3rem;
+    border-bottom: 2px solid #883788;
+    color: #883788;
+}
 
-// h2 {
-//     font-variant: small-caps;
-//     font-size: 1.5rem;
-//     margin-top: 1rem;
-//     margin-bottom: 1rem;
-//     padding-left: 1rem;
-//     padding-right: 1rem;
-//     padding-top: 0.5rem;
-//     padding-bottom: 0.5rem;
-//     background-color: #d6b8dc;
-//     color: #000000;
-// }
+h2 {
+    @extend .py-1, .my-3;
+    font-variant: small-caps;
+    font-size: 2.2rem;
+    border-bottom: 1px solid #883788;
+    color: #883788;
+}
+
+h3 {
+    @extend .py-1, .my-2;
+    font-variant: small-caps;
+    font-size: 1.8rem;
+    color: #883788;
+}
+
 
 .header1 {
     font-variant: small-caps;
