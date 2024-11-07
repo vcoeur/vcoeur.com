@@ -54,7 +54,8 @@ li pre, p pre {
 h1 {
     @extend .py-1, .mb-3;
     font-variant: small-caps;
-    font-size: 3rem;
+    font-weight: 700;
+    font-size: 2.5rem;
     border-bottom: 2px solid #883788;
     color: #883788;
 }
@@ -62,7 +63,8 @@ h1 {
 h2 {
     @extend .py-1, .my-3;
     font-variant: small-caps;
-    font-size: 2.2rem;
+    font-weight: 700;
+    font-size: 2rem;
     border-bottom: 1px solid #883788;
     color: #883788;
 }
@@ -70,7 +72,7 @@ h2 {
 h3 {
     @extend .py-1, .my-2;
     font-variant: small-caps;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     color: #883788;
 }
 

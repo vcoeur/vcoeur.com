@@ -34,52 +34,63 @@
 
 <body class="bg-light">
 
-
 <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img alt="v·coeur" src="{{ static('logo.png') }}" height="40px">
+        </a>
 
-    <div class="mb-3">
-        <div class="d-flex justify-content-between mt-2">
-            <a href="/">
-                <img alt="v·coeur" src="{{ static('logo.png') }}" width="230px">
-            </a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                {% if active == 'index' %}
+                <a class="nav-link active" aria-current="page" href="{{ url('index') }}">{{ _('Home') }}</a>
+                {% else %}
+                <a class="nav-link" href="{{ url('index') }}">{{ _('Home') }}</a>
+                {% endif %}
+            </li>
+            <!--            <li class="nav-item">-->
+            <!--                {% if active == 'services' %}-->
+            <!--                <a class="nav-link active" aria-current="page" href="{{ url('services') }}">{{ _('Services') }}</a>-->
+            <!--                {% else %}-->
+            <!--                <a class="nav-link" href="{{ url('index') }}">{{ _('Services') }}</a>-->
+            <!--                {% endif %}-->
+            <!--            </li>-->
+            <li class="nav-item">
+                {% if active == 'blog' %}
+                <a class="nav-link active" aria-current="page" href="{{ url('blog') }}">{{ _('Blog') }}</a>
+                {% else %}
+                <a class="nav-link" href="{{ url('blog') }}">{{ _('Blog') }}</a>
+                {% endif %}
+            </li>
+            <li class="nav-item">
+                {% if active == 'contact' %}
+                <a class="nav-link active" aria-current="page" href="{{ url('contact') }}">{{ _('Contact') }}</a>
+                {% else %}
+                <a class="nav-link" href="{{ url('contact') }}">{{ _('Contact') }}</a>
+                {% endif %}
+            </li>
             {% if request.LANGUAGE_CODE != 'fr' %}
-            <a class="btn btn-secondary lang" href="{{ url('to_french', path_from=request.path) }}"> Français
-            </a>
+            <li class="nav-item ms-3">
+                <a class="btn btn-outline-secondary lang" href="{{ url('to_french', path_from=request.path) }}"> Français </a>
+            </li>
             {% endif %}
             {% if request.LANGUAGE_CODE != 'en' %}
-            <a class="btn btn-secondary lang" href="{{ url('to_english', path_from=request.path) }}"> English
-            </a>
+            <li class="nav-item ms-3">
+                <a class="btn btn-outline-secondary lang" href="{{ url('to_english', path_from=request.path) }}"> English </a>
+            </li>
             {% endif %}
-        </div>
-    </div>
 
-    <ul class="nav nav-pills">
-        <li class="nav-item">
-            {% if active == 'index' %}
-            <a class="nav-link active" aria-current="page" href="{{ url('index') }}">{{ _('Home') }}</a>
-            {% else %}
-            <a class="nav-link" href="{{ url('index') }}">{{ _('Home') }}</a>
-            {% endif %}
-        </li>
-        <li class="nav-item">
-            {% if active == 'blog' %}
-            <a class="nav-link active" aria-current="page" href="{{ url('blog') }}">{{ _('Blog') }}</a>
-            {% else %}
-            <a class="nav-link" href="{{ url('blog') }}">{{ _('Blog') }}</a>
-            {% endif %}
-        </li>
-        <li class="nav-item"></li>
-        {% if active == 'contact' %}
-        <a class="nav-link active" aria-current="page" href="{{ url('contact') }}">{{ _('Contact') }}</a>
-        {% else %}
-        <a class="nav-link" href="{{ url('contact') }}">{{ _('Contact') }}</a>
-        {% endif %}
-        </li>
-    </ul>
+        </ul>
+    </header>
+</div>
+
+
+<div class="container">
 
     {% block content %}{% endblock %}
 
 </div>
+
 
 <div class="container">
     <footer class="py-3 my-2">
