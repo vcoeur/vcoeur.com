@@ -18,6 +18,13 @@ a {
     }
 }
 
+a.bold {
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #000000;
+}
+
 li pre, p pre {
     display: inline;
 }
@@ -67,8 +74,18 @@ h3 {
     color: #883788;
 }
 
+// Home Card
+.home-container {
+    @extend .row, .justify-content-lg-center;
+}
+.home {
+    @extend .col, .col-lg-8;
+}
 
-.header1 {
+.vcoeur-card-title-container {
+    @extend .row, .my-3;
+}
+.vcoeur-card-title {
     font-variant: small-caps;
     font-size: 2.5rem;
     font-weight: 600;
@@ -77,7 +94,11 @@ h3 {
     color: #ffffff;
 }
 
-.header2 {
+.vcoeur-card-left-container {
+    @extend .row, .my-3, .justify-content-start;
+}
+.vcoeur-card-left {
+    @extend .col-9, .text-end;
     font-variant: small-caps;
     font-size: 1.5rem;
     font-weight: 600;
@@ -85,26 +106,26 @@ h3 {
     color: #000000;
 }
 
-.header3 {
+.vcoeur-card-right-container {
+    @extend .row, .my-3, .justify-content-end;
+}
+.vcoeur-card-right {
+    @extend .col-9;
     font-variant: small-caps;
     font-size: 1.5rem;
     font-weight: 600;
-    background-color: #883788;
-    color: #ffffff;
-}
-
-.header4 {
-    font-variant: small-caps;
-    font-size: 1rem;
-    font-weight: 600;
-    background-color: #883788;
-    color: #ffffff;
-}
-
-.header5 {
-    font-variant: small-caps;
-    font-size: 1.5rem;
-    font-weight: 600;
-    /* background-color: #d6b8dc; */
+    background-color: #d6b8dc;
     color: #000000;
+}
+
+.vcoeur-card-footer-container {
+    @extend .row, .my-3;
+}
+.vcoeur-card-footer {
+    @extend .text-center;
+    font-variant: small-caps;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: #883788;
+    color: #ffffff;
 }

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-03 21:32+0100\n"
-"PO-Revision-Date: 2024-11-03 21:32+0100\n"
+"POT-Creation-Date: 2024-11-07 17:39+0100\n"
+"PO-Revision-Date: 2024-11-07 17:39+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -19,46 +19,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.4.2\n"
 
-#: vcoeur/jinja2/_base.html:49 vcoeur/jinja2/_base.html:51
-#: vcoeur/jinja2/index.html:2
+#: vcoeur/jinja2/_base.html:59 vcoeur/jinja2/_base.html:61
 msgid "Welcome"
 msgstr "Bienvenue"
 
-#: vcoeur/jinja2/_base.html:56 vcoeur/jinja2/_base.html:58
-#: vcoeur/jinja2/blog.html:2
+#: vcoeur/jinja2/_base.html:66 vcoeur/jinja2/_base.html:68
+#: vcoeur/jinja2/blog.html:2 vcoeur/jinja2/blog.html:5
 msgid "Blog"
 msgstr "Blog"
 
-#: vcoeur/jinja2/_base.html:63 vcoeur/jinja2/_base.html:65
-#: vcoeur/jinja2/contact.html:2
+#: vcoeur/jinja2/_base.html:73 vcoeur/jinja2/_base.html:75
+#: vcoeur/jinja2/contact.html:2 vcoeur/jinja2/contact.html:5
 msgid "Contact"
 msgstr "Contact"
 
-#: vcoeur/jinja2/blog.html:8
-msgid "View on Medium"
-msgstr "Voir sur Medium (en anglais)"
-
-#: vcoeur/jinja2/blog.html:19
+#: vcoeur/jinja2/blog.html:14
 msgid "Read the article"
 msgstr "Lire l'article"
 
-#: vcoeur/jinja2/contact.html:6
+#: vcoeur/jinja2/blog.html:24
+msgid "View on Medium"
+msgstr "Voir sur Medium (en anglais)"
+
+#: vcoeur/jinja2/contact.html:7
 msgid "Book a meeting"
 msgstr "Prendre un rendez-vous"
 
-#: vcoeur/jinja2/index.html:15
+#: vcoeur/jinja2/index.html:2 vcoeur/jinja2/index.html:5
+msgid "Home"
+msgstr "Accueil"
+
+#: vcoeur/jinja2/index.html:16
 msgid "IT project management"
 msgstr "Gestion de projets IT"
 
-#: vcoeur/jinja2/index.html:20
+#: vcoeur/jinja2/index.html:21
 msgid "Agile methodologies"
 msgstr "Méthodologies Agiles"
 
-#: vcoeur/jinja2/index.html:47
+#: vcoeur/jinja2/index.html:48
 msgid "My resume"
 msgstr "Mon CV"
 
-#: vcoeur/jinja2/index.html:53
+#: vcoeur/jinja2/index.html:54
 msgid "LinkedIn profile"
 msgstr "Profil LinkedIn"
 

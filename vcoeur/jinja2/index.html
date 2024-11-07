@@ -1,64 +1,52 @@
 {% extends "_base.html" %}
-{% block title %} {{ _('Welcome') }} {% endblock %}
+{% block title %} {{ _('Home') }} {% endblock %}
 {% block content %}
 
+<h1> {{ _('Home') }} </h1>
 
-<div class="row">
-    <div class="col-lg-6">
-        <div class="row">
-            <div class="header1"> Alice Voland </div>
+<div class="home-container">
+    <div class="home">
+
+        <div class="d-flex justify-content-center">
+            <img alt="v·coeur" src="{{ static('profile.png') }}" width="25%">
         </div>
 
-        <div class="row my-3">
-            <div class="col-3"></div>
-            <div class="col-9 header2">
+        <div class="vcoeur-card-title-container">
+            <div class="vcoeur-card-title"> Alice Voland</div>
+        </div>
+        <div class="vcoeur-card-right-container">
+            <div class="vcoeur-card-right">
                 {{ _("IT project management") }}
             </div>
         </div>
-        <div class="row my-3">
-            <div class="col-9 header2 text-end">
+        <div class="vcoeur-card-left-container">
+            <div class="vcoeur-card-left">
                 {{ _("Agile methodologies") }}
             </div>
-            <div class="col-3"></div>
         </div>
-
-        <div class="row my-3">
-            <div class="header3 text-center">
+        <div class="vcoeur-card-footer-container">
+            <div class="vcoeur-card-footer">
                 alice@vcoeur.com | <span style="font-size: 1.15rem">+33 6 50 68 16 27</span>
             </div>
         </div>
-
-    </div>
-
-    <div class="col-lg-6">
-
-        <div class="row ps-3">
-
-            <div class="col-3">
-                <div class="d-flex">
-                    <img alt="v·coeur" src="{{ static('profile.png') }}" width="95%">
-                </div>
+        <div class="vcoeur-card-right-container">
+            <div class="vcoeur-card-right">
+                <a class="bold" href="{{ static('CV Alice Voland.pdf') }}" target="_blank">
+                    <i class="bi bi-download"></i>
+                    {{ _("My resume") }}
+                </a>
             </div>
-
-            <div class="col-9">
-                <div class="row mt-2 ps-3">
-                    <a class="header5 mb-2" href="{{ static('CV Alice Voland.pdf') }}" target="_blank">
-                        <i class="bi bi-download"></i>
-                        {{ _("My resume") }}
-                    </a>
-                </div>
-                <div class="row mt-2 ps-3">
-                    <a class="header5" href="https://www.linkedin.com/in/alice-voland" target="_blank">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                        {{ _("LinkedIn profile") }}
-                    </a>
-                </div>
-        
-                    </div>
-            
         </div>
-
+        <div class="vcoeur-card-left-container">
+            <div class="vcoeur-card-left">
+                <a class="bold" href="https://www.linkedin.com/in/alice-voland" target="_blank">
+                    <i class="bi bi-box-arrow-up-right"></i>
+                    {{ _("LinkedIn profile") }}
+                </a>
+            </div>
+        </div>
     </div>
 </div>
+
 
 {% endblock %}
