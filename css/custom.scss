@@ -1,5 +1,5 @@
 // Variable overrides first
-$primary: #883788;
+$primary: #672167;
 
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
@@ -44,7 +44,7 @@ li pre, p pre {
     font-size: 1rem;
     padding-left: 1rem;
     margin-left: 1rem;
-    border-left: 2px solid #883788;
+    border-left: 2px solid #672167;
 }
 .blog-article figure figcaption {
     @extend .blockquote-footer;
@@ -56,8 +56,8 @@ h1 {
     font-variant: small-caps;
     font-weight: 700;
     font-size: 2.5rem;
-    border-bottom: 2px solid #883788;
-    color: #883788;
+    border-bottom: 2px solid #672167;
+    color: #672167;
 }
 
 h2 {
@@ -65,15 +65,15 @@ h2 {
     font-variant: small-caps;
     font-weight: 700;
     font-size: 2rem;
-    border-bottom: 1px solid #883788;
-    color: #883788;
+    border-bottom: 1px solid #672167;
+    color: #672167;
 }
 
 h3 {
     @extend .py-1, .my-2;
     font-variant: small-caps;
     font-size: 1.7rem;
-    color: #883788;
+    color: #672167;
 }
 
 // Home Card
@@ -92,7 +92,7 @@ h3 {
     font-size: 2.5rem;
     font-weight: 600;
     text-align: center;
-    background-color: #883788;
+    background-color: #672167;
     color: #ffffff;
 }
 
@@ -128,6 +128,6 @@ h3 {
     font-variant: small-caps;
     font-size: 1.5rem;
     font-weight: 600;
-    background-color: #883788;
+    background-color: #672167;
     color: #ffffff;
 }

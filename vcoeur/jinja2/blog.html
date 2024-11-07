@@ -1,8 +1,8 @@
 {% extends "_base.html" %}
-{% block title %} {{ _('Blog') }} {% endblock %}
+{% block title %} Blog {% endblock %}
 {% block content %}
 
-<h1> {{ _('Blog') }} </h1>
+<h1> Blog </h1>
 
 <div class="row">
     {% for article in articles %}
@@ -11,7 +11,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ article.title }}</h5>
                 <p class="card-text">{{ article.description }}</p>
-                <a href="{{ article.slug }}" class="btn btn-primary">{{ _("Read the article") }}</a>
+                <a href="{{ article.slug }}" class="btn btn-primary">Lire l'article (en anglais)</a>
             </div>
         </div>
     </div>
@@ -20,8 +20,7 @@
 
 <div class="my-4">
     <a class="bold" href="https://medium.com/@vcoeur" target="_blank">
-        <i class="bi bi-box-arrow-up-right"></i>
-        {{ _("View on Medium") }}
+        <i class="bi bi-box-arrow-up-right"></i> Voir sur Medium (en anglais)
     </a>
 </div>
 

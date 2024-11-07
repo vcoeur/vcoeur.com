@@ -19,7 +19,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title> {% block title %}v·coeur{% endblock %}</title>
+    <title> {% block title %}{% endblock %} | vcoeur.com</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
           crossorigin="anonymous">
@@ -42,44 +42,14 @@
 
         <ul class="nav nav-pills">
             <li class="nav-item">
-                {% if active == 'index' %}
-                <a class="nav-link active" aria-current="page" href="{{ url('index') }}">{{ _('Home') }}</a>
-                {% else %}
-                <a class="nav-link" href="{{ url('index') }}">{{ _('Home') }}</a>
-                {% endif %}
-            </li>
-            <!--            <li class="nav-item">-->
-            <!--                {% if active == 'services' %}-->
-            <!--                <a class="nav-link active" aria-current="page" href="{{ url('services') }}">{{ _('Services') }}</a>-->
-            <!--                {% else %}-->
-            <!--                <a class="nav-link" href="{{ url('index') }}">{{ _('Services') }}</a>-->
-            <!--                {% endif %}-->
-            <!--            </li>-->
-            <li class="nav-item">
-                {% if active == 'blog' %}
-                <a class="nav-link active" aria-current="page" href="{{ url('blog') }}">{{ _('Blog') }}</a>
-                {% else %}
-                <a class="nav-link" href="{{ url('blog') }}">{{ _('Blog') }}</a>
-                {% endif %}
+                <a class="nav-link{% if active == 'index' %} active{% endif %}" aria-current="page" href="{{ url('index') }}">Accueil</a>
             </li>
             <li class="nav-item">
-                {% if active == 'contact' %}
-                <a class="nav-link active" aria-current="page" href="{{ url('contact') }}">{{ _('Contact') }}</a>
-                {% else %}
-                <a class="nav-link" href="{{ url('contact') }}">{{ _('Contact') }}</a>
-                {% endif %}
+                <a class="nav-link{% if active == 'blog' %} active{% endif %}" aria-current="page" href="{{ url('blog') }}">Blog</a>
             </li>
-            {% if request.LANGUAGE_CODE != 'fr' %}
-            <li class="nav-item ms-3">
-                <a class="btn btn-outline-secondary lang" href="{{ url('to_french', path_from=request.path) }}"> Français </a>
+            <li class="nav-item">
+                <a class="nav-link{% if active == 'contact' %} active{% endif %}" aria-current="page" href="{{ url('contact') }}">Contact</a>
             </li>
-            {% endif %}
-            {% if request.LANGUAGE_CODE != 'en' %}
-            <li class="nav-item ms-3">
-                <a class="btn btn-outline-secondary lang" href="{{ url('to_english', path_from=request.path) }}"> English </a>
-            </li>
-            {% endif %}
-
         </ul>
     </header>
 </div>
