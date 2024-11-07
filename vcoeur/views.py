@@ -70,6 +70,13 @@ def contact(request: HttpRequest) -> HttpResponse:
     )
 
 
+def legal(request: HttpRequest) -> HttpResponse:
+    return render(
+        request,
+        "legal.html",
+    )
+
+
 # EXTERNAL REDIRECT
 
 

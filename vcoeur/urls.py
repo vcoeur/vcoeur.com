@@ -10,6 +10,7 @@ urlpatterns = [
     path("blog/", views.blog, name="blog"),
     path("contact/", views.contact, name="contact"),
     path("blog/<str:slug>/", views.article, name="article"),
+    path("legal/", views.legal, name="legal"),
     # Internationalization
     path("to-en/<path:path_from>", views.to_english, name="to_english"),
     path("to-fr/<path:path_from>", views.to_french, name="to_french"),
