@@ -18,6 +18,10 @@ a {
     }
 }
 
+li pre, p pre {
+    display: inline;
+}
+
 // Blog Articles
 .blog-article-container {
     @extend .row, .justify-content-lg-center;

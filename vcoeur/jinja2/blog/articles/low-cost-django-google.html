@@ -33,6 +33,8 @@
     use case. Moreover, pricing can change and depends on the region, so your experience might differ from mine.
 </p>
 
+<hr>
+
 <h2> 1 - Setup a Google Cloud Project </h2>
 
 <h3> A. Create a Google Cloud Project </h3>
@@ -103,7 +105,7 @@
     <img src="{{ static('blog/articles/low-cost-django-google/SQL Configuration.png') }}">
 </figure>
 
-<h3> D. Add database and user </h3>
+<h3 id="1-D-Add-database-and-user"> D. Add database and user </h3>
 
 <p>
     You can select the new SQL instance:
@@ -209,16 +211,17 @@ DATABASES = {
 </p>
 <ul>
     <li>
-        DATABASE_ENGINE: django.db.backends.postgresql
+        <pre>DATABASE_ENGINE</pre>: <code>django.db.backends.postgresql</code>
     </li>
     <li>
-        DATABASE_HOST: /cloudsql/[project_id]:[instance_region]:[instance_name]
+        <pre>DATABASE_HOST</pre>: <code>/cloudsql/[project_id]:[instance_region]:[instance_name]</code>
     </li>
     <li>
-        DATABASE_PORT: 5432
+        <pre>DATABASE_PORT</pre>: <code>5432</code>
     </li>
     <li>
-        DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD: See 1 - D. Add database and user
+        <pre>DATABASE_NAME</pre>, <pre>DATABASE_USER</pre>, <pre>DATABASE_PASSWORD</pre>:
+        See <a href="#1-D-Add-database-and-user">1 - D. Add database and user</a>
     </li>
 </ul>
 <p>
