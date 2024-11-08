@@ -1,7 +1,7 @@
 dispatch:
 - url: "www.vcoeur.com/*"
   service: www-vcoeur-com
-- url: "app.vcoeur.com/*"
+- url: "vcoeur.com/*"
   service: www-vcoeur-com
 # - url: "..../*"
 #   service: default

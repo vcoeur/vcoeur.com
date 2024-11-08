@@ -12,18 +12,8 @@
 # below:
 .git
 .gitignore
-.gcloudignore
-.env
-/app.yaml
-/dispatch.yaml
-/files
-/images
-/cloud-sql-proxy
-/cloud-sql-proxy.sh
 
 # Python pycache:
 __pycache__/
 # Ignored by the build system
 /setup.cfg
-# Node Modules
-/node_modules
