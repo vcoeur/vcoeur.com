@@ -3,8 +3,7 @@
 /.service-account.json
 /app.yaml
 
-# requirements export
-/requirements.txt
+# cloud sql proxy
 /cloud-sql-proxy
 /cloud-sql-proxy.sh
 
