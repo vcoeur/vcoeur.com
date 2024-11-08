@@ -1,7 +1,7 @@
 # env settings
 /.env
 /.service-account.json
-#/app.yaml
+/app.yaml
 /env.yml
 
 # cloud sql proxy
@@ -9,7 +9,7 @@
 /cloud-sql-proxy.sh
 
 # Static files
-#/static/
+/static/
 
 # PyCharm annoying files
 /.idea/
@@ -40,3 +40,6 @@ start_cloud_sql_proxy.sh
 
 # Node
 /node_modules
+
+# Requirements
+/requirements.txt
