@@ -8,7 +8,7 @@
 /cloud-sql-proxy.sh
 
 # Static files
-/static/
+#/static/
 
 # PyCharm annoying files
 /.idea/
