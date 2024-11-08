@@ -8,10 +8,10 @@ from django.conf import settings
 from vcoeur.jinja2 import logger
 
 
-def index(request: HttpRequest) -> HttpResponse:
+def home(request: HttpRequest) -> HttpResponse:
     return render(
         request,
-        "index.html",
+        "home.html",
         context=dict(
             active="index",
         ),

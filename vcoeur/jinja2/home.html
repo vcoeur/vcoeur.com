@@ -4,12 +4,17 @@
 
 <h1>Accueil</h1>
 
+<h2>Présentation</h2>
+
 <div class="home-container">
     <div class="home">
 
-        <div class="d-flex justify-content-center">
-            <img alt="v·coeur" src="{{ static('profile.png') }}" width="25%">
-        </div>
+        <p class="vcoeur-card-header">
+            Doctoresse en informatique, autonome et habituée aux projets multidisciplinaires en évolution constante, je m’adapte rapidement à de nouveaux environnements, technologies ou domaines d’application
+        </p>
+        <p class="vcoeur-card-header">
+            Je mets à profit mes expériences pour faciliter la mise en œuvre de projets informatiques
+        </p>
 
         <div class="vcoeur-card-title-container">
             <div class="vcoeur-card-title"> Alice Voland</div>
@@ -26,19 +31,12 @@
         </div>
         <div class="vcoeur-card-right-container">
             <div class="vcoeur-card-right">
-                Product Owner
+                Analyse de besoins
             </div>
         </div>
         <div class="vcoeur-card-left-container">
             <div class="vcoeur-card-left">
-                <a class="bold" href="https://www.linkedin.com/in/alice-voland" target="_blank">
-                    <i class="bi bi-box-arrow-up-right"></i>
-                    Profil LinkedIn
-                </a>&nbsp;&nbsp;
-                <a class="bold" href="{{ static('CV Alice Voland.pdf') }}" target="_blank">
-                    <i class="bi bi-download"></i>
-                    CV
-                </a>
+                Prototypage d'applications
             </div>
         </div>
         <div class="vcoeur-card-footer-container">
@@ -46,8 +44,19 @@
                 alice@vcoeur.com | <span style="font-size: 1.15rem">+33 6 50 68 16 27</span>
             </div>
         </div>
+        <div class="d-flex justify-content-center">
+            <a class="bold" href="https://www.linkedin.com/in/alice-voland" target="_blank">
+                <i class="bi bi-box-arrow-up-right"></i>
+                Profil LinkedIn
+            </a>&nbsp;&nbsp;
+            <a class="bold" href="{{ static('CV Alice Voland.pdf') }}" target="_blank">
+                <i class="bi bi-download"></i>
+                CV
+            </a>
+        </div>
     </div>
 </div>
 
+<h2>Services</h2>
 
 {% endblock %}
