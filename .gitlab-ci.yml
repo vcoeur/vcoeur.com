@@ -1,0 +1,10 @@
+
+deploy_production:
+  image: google/cloud-sdk:alpine
+  stage: deploy
+  only:
+  - main
+  script:
+  - echo $SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+  - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+  - gcloud --quiet --project $PROJECT_ID app deploy -set-env-vars SECRET_KEY=$SECRET_KEY app.yaml dispatch.yaml
