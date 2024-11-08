@@ -4,11 +4,12 @@
 
 <h1> Blog </h1>
 
-<h2>Articles en anglais</h2>
+<div class="home-container">
+    <div class="home">
 
-<div class="row">
-    {% for article in articles %}
-    <div class="col-sm-6">
+        <h2>Articles en anglais</h2>
+
+        {% for article in articles %}
         <div class="card m-2">
             <div class="card-body">
                 <h5 class="card-title">{{ article.title }}</h5>
@@ -16,14 +17,15 @@
                 <a href="{{ article.slug }}" class="btn btn-primary">Lire l'article (en anglais)</a>
             </div>
         </div>
-    </div>
-    {% endfor %}
-</div>
+        {% endfor %}
 
-<div class="my-4">
-    <a class="bold" href="https://medium.com/@vcoeur" target="_blank">
-        <i class="bi bi-box-arrow-up-right"></i> Voir sur Medium (en anglais)
-    </a>
+        <div class="d-flex justify-content-center mt-4">
+            <a class="bold" href="https://medium.com/@vcoeur" target="_blank">
+                <i class="bi bi-box-arrow-up-right"></i> Voir sur Medium (en anglais)
+            </a>
+        </div>
+
+    </div>
 </div>
 
 
