@@ -36,7 +36,7 @@
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center pt-3 pb-2">
         <a href="/" class="d-flex align-items-center mb-2 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img alt="v·coeur" src="{{ static('logo.png') }}" height="40px">
+            <img alt="v·coeur" src="{{ static('logo.png') }}" height="34px">
         </a>
 
         <ul class="nav nav-pills">
@@ -45,6 +45,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link{% if active == 'blog' %} active{% endif %}" aria-current="page" href="{{ url('blog') }}">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link{% if active == 'services' %} active{% endif %}" aria-current="page" href="{{ url('services') }}">Services</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link{% if active == 'contact' %} active{% endif %}" aria-current="page" href="{{ url('contact') }}">Contact</a>

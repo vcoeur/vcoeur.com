@@ -20,7 +20,7 @@ a {
 
 a.bold {
     font-variant: small-caps;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #000000;
 }
@@ -55,7 +55,7 @@ h1 {
     @extend .py-1, .mb-3;
     font-variant: small-caps;
     font-weight: 600;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
     text-align: center;
     border-bottom: 2px solid #672167;
     color: #672167;
@@ -65,7 +65,7 @@ h2 {
     @extend .py-1, .my-3;
     font-variant: small-caps;
     font-weight: 600;
-    font-size: 2rem;
+    font-size: 1.8rem;
     border-bottom: 1px solid #672167;
     color: #672167;
 }
@@ -73,7 +73,7 @@ h2 {
 h3 {
     @extend .py-1, .my-2;
     font-variant: small-caps;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     color: #672167;
 }
 
@@ -88,8 +88,13 @@ h3 {
 p.vcoeur-card-header {
     @extend .text-center;
     font-variant: small-caps;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
+}
+p.vcoeur-card-header.cta {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #672167;
+    border-top: 1px solid #672167;
 }
 
 

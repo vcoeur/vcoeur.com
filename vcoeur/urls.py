@@ -7,6 +7,7 @@ from vcoeur import views
 urlpatterns = [
     # Pages
     path("", views.home, name="index"),
+    path("services/", views.services, name="services"),
     path("blog/", views.blog, name="blog"),
     path("contact/", views.contact, name="contact"),
     path("blog/<str:slug>/", views.article, name="article"),

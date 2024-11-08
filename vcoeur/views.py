@@ -18,6 +18,16 @@ def home(request: HttpRequest) -> HttpResponse:
     )
 
 
+def services(request: HttpRequest) -> HttpResponse:
+    return render(
+        request,
+        "services.html",
+        context=dict(
+            active="services",
+        ),
+    )
+
+
 def blog(request: HttpRequest) -> HttpResponse:
     return render(
         request,
