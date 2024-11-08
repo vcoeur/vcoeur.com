@@ -12,8 +12,7 @@ entrypoint: gunicorn vcoeur.wsgi -b 0.0.0.0:8080 --preload --worker-class gthrea
 env_variables:
   ALLOWED_HOSTS: 'vcoeur.com,www.vcoeur.com'
   CSRF_TRUSTED_ORIGINS: 'https://vcoeur.com,https://www.vcoeur.com'
-includes:
-  - env.yaml
+  SECRET_KEY: SECRET_KEY_VALUE
 
 handlers:
 - url: /static
