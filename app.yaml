@@ -1,0 +1,23 @@
+runtime: python312
+
+instance_class: F1 # F1 is smallest class, 384 MG / 600 MHz
+automatic_scaling:
+  min_instances: 1
+  max_instances: 1
+
+service: www-vcoeur-com
+
+entrypoint: gunicorn vcoeur.wsgi -b 0.0.0.0:8080 --preload --worker-class gthread --workers 2 --threads 2
+
+env_variables:
+  ALLOWED_HOSTS: 'vcoeur.com,www.vcoeur.com'
+  CSRF_TRUSTED_ORIGINS: 'https://vcoeur.com,https://www.vcoeur.com'
+includes:
+  - env.yaml
+
+handlers:
+- url: /static
+  static_dir: static/
+- url: /.*
+  script: auto
+  
