@@ -10,6 +10,7 @@
 
 # Static files
 /static/
+/local/
 
 # PyCharm annoying files
 /.idea/
