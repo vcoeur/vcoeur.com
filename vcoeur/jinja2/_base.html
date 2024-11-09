@@ -3,6 +3,21 @@
 
 <head>
 
+    {% if settings.ENVIRONMENT == "PRODUCTION" %}
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0XNFSYS9C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-Q0XNFSYS9C');
+    </script>
+
+    {% endif %}
+
+
     <link
             href="{{ static('favicon-light.png') }}"
             rel="shortcut icon" type="image/png"
