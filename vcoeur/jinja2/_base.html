@@ -54,30 +54,31 @@
             <img alt="v·coeur" src="{{ static('logo.png') }}" height="34px">
         </a>
 
-        <ul class="nav nav-pills">
-            <li class="nav-item">
-                <a class="nav-link{% if active == 'index' %} active{% endif %}" aria-current="page" href="{{ url('index') }}">Accueil</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link{% if active == 'blog' %} active{% endif %}" aria-current="page" href="{{ url('blog') }}">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link{% if active == 'services' %} active{% endif %}" aria-current="page" href="{{ url('services') }}">Services</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link{% if active == 'contact' %} active{% endif %}" aria-current="page" href="{{ url('contact') }}">Contact</a>
-            </li>
-        </ul>
+        <nav>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link{% if active == 'index' %} active{% endif %}" aria-current="page" href="{{ url('index') }}">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if active == 'blog' %} active{% endif %}" aria-current="page" href="{{ url('blog') }}">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if active == 'services' %} active{% endif %}" aria-current="page" href="{{ url('services') }}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if active == 'contact' %} active{% endif %}" aria-current="page" href="{{ url('contact') }}">Contact</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 </div>
 
 
-<div class="container">
+<main class="container">
 
     {% block content %}{% endblock %}
 
-</div>
-
+</main>
 
 <div class="container">
     <footer class="py-2 my-2">
