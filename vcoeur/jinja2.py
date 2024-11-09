@@ -1,5 +1,6 @@
 import logging
 
+from django.conf import settings
 from django.contrib.staticfiles.storage import staticfiles_storage
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
@@ -17,6 +18,7 @@ def environment(**options):
     env.globals.update(
         url=_url,
         static=staticfiles_storage.url,
+        settings=settings,
         _=_,
     )
     env.filters.update(

@@ -17,5 +17,7 @@ urlpatterns = [
     path("to-fr/<path:path_from>", views.to_french, name="to_french"),
     # Calendly Redirect
     path("calendly/", views.calendly, name="calendly"),
+    # Robots.txt
+    path("robots.txt", views.robots, name="robots"),
 ]
  

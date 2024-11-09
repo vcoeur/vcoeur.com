@@ -1,7 +1,9 @@
+from enum import Enum
 from pathlib import Path
 
 from django.utils.translation import gettext_lazy as _
 from environs import Env
+from jinja2.filters import ignore_case
 
 env = Env()
 env.read_env()
@@ -21,6 +23,13 @@ else:
     SECRET_KEY = env.str("SECRET_KEY")
     ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
     CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
+
+ENVIRONMENT: str = env.enum(
+    'ENVIRONMENT',
+    type=Enum('ENVIRONMENT', 'DEBUG TEST PRODUCTION'),
+    ignore_case=True,
+    default='DEBUG',
+).name
 
 # Application definition
 

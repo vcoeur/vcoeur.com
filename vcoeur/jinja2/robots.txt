@@ -1,0 +1,13 @@
+# robots.txt
+{% if settings.ENVIRONMENT == "PRODUCTION" %}
+# vcoeur.com
+User-agent: *
+Disallow:
+{% elif settings.ENVIRONMENT == "TEST" %}
+# test.vcoeur.com
+User-agent: *
+Disallow: /
+{% else %}
+User-agent: *
+Disallow: /
+{% endif %}

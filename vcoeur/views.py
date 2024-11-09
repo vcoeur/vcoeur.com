@@ -1,7 +1,6 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render, redirect
 from django.template import TemplateDoesNotExist
-from django.utils.translation import to_locale, get_language
 from django.utils import translation
 from django.conf import settings
 
@@ -113,3 +112,11 @@ def to_french(request: HttpRequest, path_from: str) -> HttpResponse:
     # persist using the cookie
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
     return response
+
+
+def robots(request: HttpRequest) -> HttpResponse:
+    return render(
+        request,
+        "robots.txt",
+        content_type="text/plain",
+    )
