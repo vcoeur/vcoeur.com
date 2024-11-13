@@ -1,28 +1,30 @@
-# v·coeur website
+# vcoeur.com website source code
 
-## Deploy with Cloud Run
+This project is [VCOEUR.COM](https://vcoeur.com) website source code.
 
-Using Dockerfile and cloudbuild.yaml for automated build from GitHub main branch.
+## Run locally
+
+You need to create `.env`, using `.env.example` as a template. In order to update the css, you can edit `files/custom.css`. 
+
+You can then run the server with the following command (requires sass):
+
+```bash
+./runserver.sh
+```
+
 
 ## Deploy with App Engine
 
-Requires to generate the requirements.txt file, and to create an app.yaml.
+You need to create a `app.yaml`, using `app.example.yaml` as a template.
 
-````bash
-poetry export > requirements.txt
-gcloud app deploy
-````
+You can deploy the app with the following commands:
 
-In order to dispatch domain names to services:
-````bash
-gcloud app deploy dispatch.yaml
-````
-
-## Compile
-
+```bash
+deploy-app.sh
 ```
-$ ./manage.py makemessages -a --no-obsolete
-$ ./manage.py compilemessages
-$ ./make-css.sh
-$ ./manage.py collectstatic --no-input
-```
+
+
+## Deploy with Heroku
+
+The `Procfile` is provided.
+

@@ -11,13 +11,19 @@ automatic_scaling:
   min_instances: 1
   max_instances: 1
 
-service: www-vcoeur-com
+service: service-name
 
 entrypoint: gunicorn vcoeur.wsgi -b 0.0.0.0:8080 --preload --worker-class gthread --workers 2 --threads 2
 
 env_variables:
-#   SECRET_KEY: ...
-#   ALLOWED_HOSTS: 'subdomain.domain,othersub.domain,...'
+  ALLOWED_HOSTS: 'domain.com'
+  CSRF_TRUSTED_ORIGINS: 'https://domain.com'
+  SECRET_KEY: 'some-secret-key'
+  ENVIRONMENT: 'production'
+  SITE_NAME: 'domain.com'
+  SITE_HOST_NAME: 'Hosting Company'
+  SITE_HOST_SIREN: 'Hosting Company SIREN'
+  SITE_HOST_ADDRESS: 'Hosting Company Address'
 
 handlers:
 - url: /static
