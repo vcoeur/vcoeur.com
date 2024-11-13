@@ -11871,7 +11871,7 @@ li pre, p pre {
   display: inline;
 }
 
-span.logo, span.logo-dot {
+span.logo {
   font-variant: small-caps;
   font-size: 2.2rem;
   font-weight: 600;
