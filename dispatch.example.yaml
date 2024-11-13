@@ -1,0 +1,5 @@
+dispatch:
+- url: "domain.com/*"
+  service: service-name
+- url: "www.domain.com/*"
+  service: vcoeur-com

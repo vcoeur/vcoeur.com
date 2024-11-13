@@ -1,16 +1,12 @@
 # env settings
 /.env
 /.service-account.json
-/app-*.yaml
-/env.yml
+/app.yaml
+/dispatch.yaml
 
-# cloud sql proxy
-/cloud-sql-proxy
-/cloud-sql-proxy.sh
 
 # Static files
 /static/
-/local/
 
 # PyCharm annoying files
 /.idea/
@@ -32,12 +28,6 @@ __pycache__/
 
 # Compiled transalation files
 /locale/**/*.mo
-
-# Compiled static files
-/static-files/
-
-# Cloud SQL Proxy
-start_cloud_sql_proxy.sh
 
 # Node
 /node_modules

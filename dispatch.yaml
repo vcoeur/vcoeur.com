@@ -1,9 +1,0 @@
-dispatch:
-- url: "vcoeur.com/*"
-  service: default
-- url: "www.vcoeur.com/*"
-  service: default
-#- url: "test.vcoeur.com/*"
-#  service: test-vcoeur-com
-# - url: "..../*"
-#   service: default
