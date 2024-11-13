@@ -41,10 +41,6 @@ span.logo {
     font-weight: 600;
     font-color: var(--primary);
 }
-span.logo-dot {
-    @extend .logo;
-    font-weight: 1500;
-}
 
 // Blog Articles
 .blog-article-container {

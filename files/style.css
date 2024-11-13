@@ -11878,10 +11878,6 @@ span.logo, span.logo-dot {
   font-color: var(--primary);
 }
 
-span.logo-dot {
-  font-weight: 1500;
-}
-
 .blog-article figure img {
   width: 100%;
 }
