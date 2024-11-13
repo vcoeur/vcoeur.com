@@ -33,6 +33,19 @@ li pre, p pre {
     display: inline;
 }
 
+// Logo
+
+span.logo {
+    font-variant: small-caps;
+    font-size: 2.2rem;
+    font-weight: 600;
+    font-color: var(--primary);
+}
+span.logo-dot {
+    @extend .logo;
+    font-weight: 1500;
+}
+
 // Blog Articles
 .blog-article-container {
     @extend .row, .justify-content-lg-center;
